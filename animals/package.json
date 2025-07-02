@@ -1,0 +1,14 @@
+{
+    "name": "@zoo/animals",
+    "version": "1.0.0",
+    "type": "module",
+    "exports": {
+        "./lion.js": "./lion.js",
+        "./tiger.js": "./tiger.js",
+        "./bear.js": "./bear.js",
+        "./manifest.js": "./manifest.js",
+        "./animalLoader.js": "./animalLoader.js"
+    },
+    "description": "Reusable animal logic for the zoo web app.",
+    "license": "MIT"
+}
