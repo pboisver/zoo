@@ -1,14 +1,14 @@
 // animals/lion.js
-// Returns favorite foods for Lion
-export function favorites(foods) {
+// Returns foods the Lion eats
+export function eats(foods) {
     const likes = ['beef', 'chicken']
     const filtered = foods.filter(food => likes.includes(food.toLowerCase()))
-    console.log('[Lion.favorites] foods:', foods, 'filtered:', filtered)
+    console.log('[Lion.eats] foods:', foods, 'filtered:', filtered)
     return filtered
 }
-// Returns disliked foods for Lion
-export function dislikes(foods) {
+// Returns foods the Lion spits out
+export function spitsOut(foods) {
     const dislikes = ['lettuce', 'honey']
     return foods.filter(food => dislikes.includes(food.toLowerCase()))
 }
-export default { name: 'Lion', favorites, dislikes };
+export default { name: 'Lion', eats, spitsOut };

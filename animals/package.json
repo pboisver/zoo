@@ -10,5 +10,11 @@
         "./animalLoader.js": "./animalLoader.js"
     },
     "description": "Reusable animal logic for the zoo web app.",
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "vitest": "^3.2.4"
+    },
+    "scripts": {
+        "test": "vitest"
+    }
 }

@@ -1,12 +1,12 @@
 // animals/tiger.js
-// Returns favorite foods for Tiger
-export function favorites(foods) {
+// Returns foods the Tiger eats
+export function eats(foods) {
     const likes = ['beef', 'chicken']
     return foods.filter(food => likes.includes(food.toLowerCase()))
 }
-// Returns disliked foods for Tiger
-export function dislikes(foods) {
+// Returns foods the Tiger spits out
+export function spitsOut(foods) {
     const dislikes = ['lettuce', 'fish']
     return foods.filter(food => dislikes.includes(food.toLowerCase()))
 }
-export default { name: 'Tiger', favorites, dislikes };
+export default { name: 'Tiger', eats, spitsOut };
