@@ -1,0 +1,14 @@
+[
+    {
+        "@id": "Lion",
+        "koio:implementation": "./lion.js"
+    },
+    {
+        "@id": "Tiger",
+        "koio:implementation": "./tiger.js"
+    },
+    {
+        "@id": "Bear",
+        "koio:implementation": "./bear.js"
+    }
+]

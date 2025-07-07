@@ -4,35 +4,29 @@
       <FoodSelector @feed="handleFeed" />
     </div>
     <div class="right-panel animal-panels">
-      <AnimalPanel v-for="animal in animals" :key="animal.name" :name="animal.name" :eats="animal.foods"
+      <AnimalPanel v-for="animal in animalsRef" :key="animal.name" :name="animal.name" :eats="animal.eats"
         :spitsOut="animal.spitsOut" />
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import FoodSelector from './components/FoodSelector.vue'
 import AnimalPanel from './components/AnimalPanel.vue'
-import { loadAnimals } from '@zoo/animals/animalLoader.js'
+import animals from '@zoo/animals'
 
-const animals = ref([])
-
-onMounted(() => {
-  animals.value = loadAnimals().map(animal => ({
-    name: animal.name,
-    foods: [],
-    spitsOut: [],
-    eats: animal.eats,
-    spitsOutFn: animal.spitsOut
-  }))
-})
+const animalsRef = ref(animals.map(animal => ({
+  name: animal.name,
+  eats: animal.eats([]),
+  spitsOut: animal.spitsOut([])
+})))
 
 function handleFeed(selectedFoods) {
-  animals.value.forEach(animal => {
-    animal.foods = animal.eats(selectedFoods)
-    animal.spitsOut = animal.spitsOutFn(selectedFoods)
-    console.log(animal.name, 'eats:', animal.foods, 'spits out:', animal.spitsOut)
+  animalsRef.value.forEach((animal, i) => {
+    animal.name = animals[i].name
+    animal.eats = animals[i].eats(selectedFoods)
+    animal.spitsOut = animals[i].spitsOut(selectedFoods)
   })
 }
 </script>
