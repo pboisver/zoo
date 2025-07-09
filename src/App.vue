@@ -10,23 +10,31 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import FoodSelector from './components/FoodSelector.vue'
 import AnimalPanel from './components/AnimalPanel.vue'
 import animals from '@zoo/animals'
+import elephant from './animals/elephant'
 
-const animalsRef = ref(animals.map(animal => ({
-  name: animal.name,
-  eats: animal.eats([]),
-  spitsOut: animal.spitsOut([])
-})))
+// Combine animals and elephant into allAnimals
+const allAnimals = [...animals, elephant]
 
-function handleFeed(selectedFoods) {
+// Use a typed ref for animalsRef
+const animalsRef = ref(
+  allAnimals.map(animal => ({
+    name: animal.name,
+    eats: animal.eats([]),
+    spitsOut: animal.spitsOut([])
+  }))
+)
+
+// Type the handleFeed argument
+function handleFeed(selectedFoods: string[]) {
   animalsRef.value.forEach((animal, i) => {
-    animal.name = animals[i].name
-    animal.eats = animals[i].eats(selectedFoods)
-    animal.spitsOut = animals[i].spitsOut(selectedFoods)
+    animal.name = allAnimals[i].name
+    animal.eats = allAnimals[i].eats(selectedFoods)
+    animal.spitsOut = allAnimals[i].spitsOut(selectedFoods)
   })
 }
 </script>

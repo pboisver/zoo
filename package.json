@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@zoo/animals": "./animals",
+    "@zoo/animals": "file:./animals/zoo-animals-1.0.0.tgz",
     "vue": "^3.5.17"
   },
   "devDependencies": {
