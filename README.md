@@ -11,3 +11,25 @@ Animals from the `@zoo/animals` package are included automatically. You can also
 ```bash
 npm install
 ```
+
+## Running the Web App
+
+To start the development server and run the web app locally:
+
+```bash
+npm run dev
+```
+
+This will launch the app at the local address shown in your terminal (usually <http://localhost:5173/>).
+
+To build the app for production:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```

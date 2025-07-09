@@ -1,9 +1,4 @@
-import lion from "./lion";
-import tiger from "./tiger";
-import bear from "./bear";
-import type { Animal } from "./Animal";
-
-const animals: Animal[] = [lion, tiger, bear];
+import animals from "./manifest";
 export default animals;
-export { animals, bear, lion, tiger };
+export * from "./manifest";
 export type { Animal } from "./Animal";
